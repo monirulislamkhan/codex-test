@@ -1,0 +1,50 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+body {
+  font-family: $font-family-base;
+  color: $color-text-dark;
+  background-color: $color-background;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color $transition-base;
+
+  &:hover,
+  &:focus {
+    color: $color-secondary;
+  }
+}
+
+.header {
+  @include responsive-padding(1.5rem, 0);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 12px rgba(15, 23, 42, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  .navbar-brand {
+    font-weight: 700;
+    color: $color-primary;
+    font-size: 1.5rem;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    color: $color-text-light;
+
+    &.active {
+      color: $color-primary;
+    }
+  }
+
+  .btn-contact {
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+}

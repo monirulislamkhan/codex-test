@@ -1,0 +1,16 @@
+@mixin backdrop-blur($blur: 18px) {
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+}
+
+@mixin responsive-padding($vertical, $horizontal) {
+  padding: $vertical $horizontal;
+
+  @media (max-width: 991.98px) {
+    padding: $vertical * 0.75 $horizontal * 0.75;
+  }
+
+  @media (max-width: 575.98px) {
+    padding: $vertical * 0.5 $horizontal * 0.5;
+  }
+}
